@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0b172e"/>
+      <stop offset="100%" stop-color="#060913"/>
+    </radialGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+    <linearGradient id="pcbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a3d62"/>
+      <stop offset="100%" stop-color="#05192d"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+
+  <!-- Circuit grid pattern -->
+  <g stroke="#00f3ff" stroke-width="1" opacity="0.15">
+    <line x1="0" y1="75" x2="800" y2="75"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+  </g>
+
+  <!-- Arduino Microcontroller Board -->
+  <g transform="translate(130, 110)">
+    <!-- Board PCB -->
+    <rect width="250" height="190" rx="12" fill="url(#pcbGrad)" stroke="#00f3ff" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Mounting Holes -->
+    <circle cx="18" cy="18" r="6" fill="#060913" stroke="#00f3ff" stroke-width="1.5"/>
+    <circle cx="232" cy="18" r="6" fill="#060913" stroke="#00f3ff" stroke-width="1.5"/>
+    <circle cx="18" cy="172" r="6" fill="#060913" stroke="#00f3ff" stroke-width="1.5"/>
+    <circle cx="232" cy="172" r="6" fill="#060913" stroke="#00f3ff" stroke-width="1.5"/>
+
+    <!-- Microcontroller Chip (ATmega) -->
+    <rect x="75" y="70" width="100" height="48" rx="4" fill="#070b14" stroke="#00f3ff" stroke-width="1.5"/>
+    <text x="125" y="99" fill="#00f3ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">ATmega328P</text>
+
+    <!-- USB Port -->
+    <rect x="-12" y="30" width="34" height="42" rx="4" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="-2" y="38" width="14" height="26" fill="#0f172a"/>
+
+    <!-- DC Power Jack -->
+    <rect x="-12" y="115" width="38" height="45" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+
+    <!-- Header Pins (Digital / Analog) -->
+    <rect x="35" y="8" width="180" height="12" rx="2" fill="#030712" stroke="#00f3ff" stroke-width="1"/>
+    <rect x="35" y="170" width="180" height="12" rx="2" fill="#030712" stroke="#00f3ff" stroke-width="1"/>
+
+    <!-- Board Name -->
+    <text x="125" y="145" fill="#38bdf8" font-family="'Orbitron', monospace" font-size="13" font-weight="bold" text-anchor="middle" letter-spacing="2">ARDUINO UNO</text>
+    
+    <!-- Status LEDs -->
+    <circle cx="190" cy="50" r="4" fill="#00ffaa" filter="url(#glow)"/>
+    <circle cx="205" cy="50" r="4" fill="#00f3ff" filter="url(#glow)"/>
+  </g>
+
+  <!-- Ultrasonic Sensor (HC-SR04) -->
+  <g transform="translate(450, 90)">
+    <rect width="180" height="85" rx="8" fill="#0d233a" stroke="#00f3ff" stroke-width="2"/>
+    <!-- Sensor Transducer Left (Trig) -->
+    <circle cx="50" cy="42" r="28" fill="#1e293b" stroke="#00f3ff" stroke-width="2"/>
+    <circle cx="50" cy="42" r="18" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="50" cy="42" r="8" fill="#00f3ff" opacity="0.6"/>
+    
+    <!-- Sensor Transducer Right (Echo) -->
+    <circle cx="130" cy="42" r="28" fill="#1e293b" stroke="#00f3ff" stroke-width="2"/>
+    <circle cx="130" cy="42" r="18" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="130" cy="42" r="8" fill="#00f3ff" opacity="0.6"/>
+
+    <!-- Ultrasonic waves emitted -->
+    <path d="M 130 85 C 130 115, 130 135, 130 150" stroke="#00f3ff" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+    <path d="M 50 85 C 50 115, 50 135, 50 150" stroke="#00f3ff" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+    
+    <text x="90" y="-10" fill="#00f3ff" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle">ULTRASONIC SENSOR</text>
+  </g>
+
+  <!-- Dispenser Nozzle & Water Flow -->
+  <g transform="translate(540, 220)">
+    <!-- Solenoid Valve Nozzle -->
+    <rect x="-15" y="0" width="30" height="35" rx="4" fill="#334155" stroke="#00f3ff" stroke-width="1.5"/>
+    <rect x="-6" y="35" width="12" height="15" fill="#64748b"/>
+
+    <!-- Flowing Water Stream -->
+    <path d="M -4 50 Q 0 95 -3 140 L 3 140 Q 1 95 4 50 Z" fill="url(#neonCyan)" opacity="0.85" filter="url(#glow)"/>
+
+    <!-- Water Droplets -->
+    <ellipse cx="0" cy="85" rx="5" ry="8" fill="#00f3ff" opacity="0.9"/>
+    <ellipse cx="8" cy="110" rx="3" ry="5" fill="#00f3ff" opacity="0.7"/>
+    <ellipse cx="-7" cy="125" rx="3" ry="5" fill="#00f3ff" opacity="0.7"/>
+
+    <!-- Water Glass / Tumbler -->
+    <polygon points="-35,120 35,120 28,190 -28,190" fill="rgba(0, 243, 255, 0.08)" stroke="#00f3ff" stroke-width="2"/>
+    <ellipse cx="0" cy="120" rx="35" ry="8" fill="none" stroke="#00f3ff" stroke-width="1.5"/>
+    <polygon points="-28,155 28,155 26,188 -26,188" fill="rgba(0, 243, 255, 0.45)" filter="url(#glow)"/>
+
+    <!-- Detection Beam -->
+    <ellipse cx="0" cy="120" rx="45" ry="12" fill="none" stroke="#00f3ff" stroke-width="2" stroke-dasharray="6 4" filter="url(#glow)"/>
+    <text x="0" y="215" fill="#00ffaa" font-family="'Orbitron', monospace" font-size="11" font-weight="bold" text-anchor="middle">TOUCHLESS DETECTED</text>
+  </g>
+
+  <!-- Jumper Wires -->
+  <path d="M 360 130 C 400 130, 410 115, 450 115" fill="none" stroke="#00f3ff" stroke-width="2.5" filter="url(#glow)"/>
+  <path d="M 360 145 C 410 145, 420 135, 450 135" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M 360 160 C 420 160, 440 220, 525 235" fill="none" stroke="#0088ff" stroke-width="2"/>
+
+  <!-- Badge Overlay -->
+  <g transform="translate(40, 395)">
+    <rect width="270" height="36" rx="6" fill="rgba(6, 9, 19, 0.9)" stroke="#00f3ff" stroke-width="1"/>
+    <text x="135" y="23" fill="#00f3ff" font-family="'Orbitron', monospace" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="1">IOT EMBEDDED SYSTEM</text>
+  </g>
+</svg>
